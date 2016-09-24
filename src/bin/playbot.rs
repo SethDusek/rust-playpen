@@ -115,6 +115,16 @@ impl Playbot {
             String::from(code)
         } else {
             format!(r#"
+            <SpaceManiac> would it make sense for playbot to suppress warnings?
+<scott> Shibe: assignment expressions in Rust can't result in the thing being assigned because that may required a move, and you wouldn't to move out of the thing you just moved in
+<scott> SpaceManiac: it already suppresses a subset of them
+<durka42> #![allow(warnings)] might be nice
+<scott> I'd rather not suppress all of them
+<breeden> unused assignments should be allowed
+<breeden> i mean, which warning do you want to keep?
+<durka42> it only does #![allow(dead_code, unused_variables)]
+<durka42> warnings are just an annoyance with playbot, because it hides any further results
+<june> Send PRs :) https://github.com/rust-lang/rust-playpen/blob/master/src/bin/playbot.rs#L118
 #![allow(dead_code, unused_variables)]
 
 static VERSION: &'static str = "{version}";
